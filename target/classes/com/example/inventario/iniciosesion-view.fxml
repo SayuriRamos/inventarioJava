@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventario.InicioSesionView">
+   <children>
+      <VBox alignment="CENTER" prefHeight="650.0" prefWidth="900.0" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+
+          <Label fx:id="welcomeText" alignment="CENTER" prefHeight="47.0" prefWidth="144.0" text="Bienvenido" textAlignment="CENTER">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <TextField fx:id="userNameTextField" maxHeight="40.0" maxWidth="250.0" prefHeight="40.0" promptText="Usuario" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 2;" />
+         <PasswordField fx:id="contrasenaTextField" maxWidth="250.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Contraseña" style="-fx-border-color: gray;" />
+          <Button onMouseClicked="#iniciarSesionAction" text="Iniciar Sesión" />
+      </VBox>
+      <Label fx:id="incorrecto" alignment="CENTER" layoutX="322.0" layoutY="139.0" prefHeight="47.0" prefWidth="250.0" style="-fx-background-color: tomato;" text="Usuario o contraseña incorrectos" visible="false">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
