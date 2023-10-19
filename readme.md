@@ -13,6 +13,7 @@ Información: Este proyecto simula un sistema de inventario, en donde se tienen 
 3. Asegurarse que el usuario, base de datos y contraseña sean correctas en ConexionBD.java
 4. Ya que el proyecto no cuenta con la funcionalidad de añadir usuarios, se recomienda crear uno para poder iniciar sesión, al igual que una ubicación.
 
+El archivo ejecutable se encuentra en out\artifacts\inventario_jar\inventario.jar
 
 Pantalla 1. 
 
