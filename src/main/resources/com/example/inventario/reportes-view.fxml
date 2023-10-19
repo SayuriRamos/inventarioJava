@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventario.ReportesView">
+   <children>
+      <TableView fx:id="movimientosTableview" layoutX="23.0" layoutY="45.0" prefHeight="582.0" prefWidth="648.0">
+        <columns>
+          <TableColumn fx:id="idColumna" prefWidth="48.19997787475586" text="id" />
+          <TableColumn fx:id="productoColumna" prefWidth="87.00001525878906" text="Producto" />
+            <TableColumn fx:id="fechaColumna" prefWidth="86.79998779296875" text="Fecha" />
+            <TableColumn fx:id="tipoColumna" prefWidth="86.199951171875" text="Tipo" />
+            <TableColumn fx:id="cantidadColumna" prefWidth="100.0" text="Cantidad" />
+            <TableColumn fx:id="ubicacionColumna" prefWidth="96.800048828125" text="Ubicacion" />
+        </columns>
+      </TableView>
+      <RadioButton fx:id="movimientosRadioButton" layoutX="701.0" layoutY="90.0" mnemonicParsing="false" onAction="#movAction" text="Movimientos" />
+      <RadioButton fx:id="entradaSRadioButton" layoutX="701.0" layoutY="123.0" mnemonicParsing="false" onAction="#SalidaEntradaAction" prefHeight="43.0" prefWidth="158.0" text="Salida y entrada por mes de todos los producto" wrapText="true" />
+      <Label layoutX="721.0" layoutY="35.0" text="Tipos de Reportes">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="23.0" layoutY="14.0" mnemonicParsing="false" onAction="#regresarAction" text="Regresar" />
+      <TableView fx:id="entradasSTableView" layoutX="39.0" layoutY="90.0" prefHeight="541.0" prefWidth="602.0" visible="false">
+        <columns>
+          <TableColumn fx:id="mesColumna" prefWidth="142.20001220703125" text="Mes" />
+          <TableColumn fx:id="entradasColumna" prefWidth="156.39996337890625" text="Entradas Totales" />
+            <TableColumn fx:id="salidasColumna" prefWidth="147.20001220703125" text="Salidas Totales" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -15,16 +15,14 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label prefHeight="45.0" prefWidth="296.0" text="Inventario">
+                        <Label prefHeight="46.0" prefWidth="526.0" text="Inventario">
                            <font>
                               <Font size="31.0" />
                            </font>
-                        </Label>
-                        <Button mnemonicParsing="false" onAction="#reloadTablaAction" text="Recargar Tabla">
                            <HBox.margin>
-                              <Insets left="120.0" top="40.0" />
+                              <Insets />
                            </HBox.margin>
-                        </Button>
+                        </Label>
                      </children>
                   </HBox>
                   <TableView fx:id="tableViewInventario" prefHeight="565.0" prefWidth="519.0">
@@ -44,11 +42,23 @@
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="650.0" prefWidth="316.0">
                <children>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#cerrarSesionAction" prefHeight="33.0" prefWidth="140.0" style="-fx-alignment: center;" text="Cerrar Sesión" textAlignment="CENTER">
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="reportesButton" maxWidth="140.0" mnemonicParsing="false" onAction="#reportesAction" prefHeight="33.0" prefWidth="100.0" text="Reportes">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#cerrarSesionAction" prefHeight="33.0" prefWidth="140.0" style="-fx-alignment: center;" text="Cerrar Sesión" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
                      <VBox.margin>
-                        <Insets left="160.0" top="10.0" />
+                        <Insets top="5.0" />
                      </VBox.margin>
-                  </Button>
+                  </HBox>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="79.0" stroke="#f4f4f4" strokeType="INSIDE" width="316.0" />
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="316.0">
                      <children>
@@ -70,6 +80,11 @@
                   </VBox>
                   <AnchorPane prefHeight="430.0" prefWidth="316.0">
                      <children>
+                        <Label fx:id="incorrecto" layoutX="45.0" layoutY="8.0" prefHeight="34.0" prefWidth="234.0" style="-fx-background-color: tomato;" text="Asegurate de que los datos sean correctos y no falte ninguno" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                         <Group fx:id="agregarGrupo" layoutX="78.0" layoutY="88.0">
                            <children>
                               <TextField fx:id="descripcionATextField" layoutX="1.0" layoutY="65.0" />
@@ -85,36 +100,39 @@
                               <Label layoutX="28.0" layoutY="-36.0" text="Agregar Producto" />
                            </children>
                         </Group>
-                        <Group fx:id="actualizarGrupo" layoutX="88.0" layoutY="98.0" visible="false">
+                        <Group fx:id="actualizarGrupo" layoutX="64.0" layoutY="103.0" visible="false">
                            <children>
-                              <TextField layoutX="1.0" layoutY="65.0" />
-                              <TextField layoutX="1.0" layoutY="17.0" />
-                              <TextField layoutX="1.0" layoutY="109.0" />
-                              <TextField layoutX="1.0" layoutY="155.0" />
-                              <ChoiceBox layoutY="205.0" prefWidth="150.0" />
+                              <TextField fx:id="descripcionBTextField" layoutX="1.0" layoutY="65.0" />
+                              <TextField fx:id="productoIdBTextField" layoutX="1.0" layoutY="-23.0" />
+                              <TextField fx:id="precioBTextField" layoutX="1.0" layoutY="109.0" />
+                              <TextField fx:id="cantidadBTextField" layoutX="1.0" layoutY="155.0" />
+                              <ChoiceBox fx:id="ubicacionBChoiseBox" layoutY="205.0" prefWidth="150.0" />
                               <Button layoutX="50.0" layoutY="262.0" mnemonicParsing="false" onAction="#actualizarProductoAction" text="Actualizar" />
                               <Label layoutX="1.0" layoutY="47.0" text="Descripción" />
                               <Label layoutX="1.0" layoutY="91.0" text="Precio" />
                               <Label layoutX="3.0" layoutY="137.0" text="Cantidad" />
-                              <Label layoutX="2.0" text="Id del producto (Ver tabla)" />
-                              <Label layoutX="-19.0" layoutY="-42.0" text="Actualizar información de producto" />
+                              <Label layoutX="2.0" layoutY="-42.0" text="Id del producto (Ver tabla)" />
+                              <Label layoutX="-19.0" layoutY="-61.0" text="Actualizar información de producto" />
+                              <Button layoutX="160.0" layoutY="-45.0" mnemonicParsing="false" onAction="#obtenerInfoAction" prefHeight="63.0" prefWidth="68.0" text="Obtener Info de Producto" wrapText="true" />
+                              <TextField fx:id="nombreBTextField" layoutX="3.0" layoutY="21.0" />
+                              <Label layoutX="4.0" layoutY="2.0" text="Nombre" />
                            </children>
                         </Group>
                         <Group fx:id="cantidadGrupo" layoutX="88.0" layoutY="88.0" visible="false">
                            <children>
-                              <TextField layoutX="1.0" layoutY="65.0" />
-                              <TextField layoutX="1.0" layoutY="17.0" />
+                              <TextField fx:id="cantidadCTextField" layoutX="1.0" layoutY="65.0" />
+                              <TextField fx:id="idProductoCTextField" layoutX="1.0" layoutY="17.0" />
                               <Label layoutX="1.0" layoutY="47.0" text="Cantidad" />
                               <Label text="Id del producto (Ver tabla)" />
                               <Button layoutX="36.0" layoutY="173.0" mnemonicParsing="false" onAction="#cantidadProductoAction" text="Actualizar" />
-                              <RadioButton layoutX="2.0" layoutY="103.0" mnemonicParsing="false" text="Añadir" />
-                              <RadioButton layoutX="2.0" layoutY="130.0" mnemonicParsing="false" text="Eliminar" />
+                              <RadioButton fx:id="anadirCRadioButton" layoutX="2.0" layoutY="103.0" mnemonicParsing="false" onAction="#seleccionarAnadirAction" text="Añadir" />
+                              <RadioButton fx:id="eliminarCRadioButton" layoutX="2.0" layoutY="130.0" mnemonicParsing="false" onAction="#seleccionarEliminarAction" text="Eliminar" />
                               <Label layoutX="-16.0" layoutY="-41.0" text="Actualizar Cantidad de Producto" />
                            </children>
                         </Group>
                         <Group fx:id="eliminarGrupo" layoutX="88.0" layoutY="88.0" visible="false">
                            <children>
-                              <TextField layoutX="1.0" layoutY="17.0" />
+                              <TextField fx:id="idProductoDTextField" layoutX="1.0" layoutY="17.0" />
                               <Label text="Id del producto (Ver tabla)" />
                               <Button layoutX="40.0" layoutY="74.0" mnemonicParsing="false" onAction="#eliminarProductoAction" text="Eliminar" />
                               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="-40.0" text="Eliminar Producto" textAlignment="CENTER" />
